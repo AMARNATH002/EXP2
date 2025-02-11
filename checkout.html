@@ -138,8 +138,24 @@
                 `;
                 checkoutItems.innerHTML += row;
             });
+    
+            // Hide or show card details based on the selected payment method
+            const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+            const cardDetails = document.getElementById("card-details");
+    
+            function toggleCardDetails() {
+                const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+                cardDetails.style.display = selectedMethod === "card" ? "block" : "none";
+            }
+    
+            paymentMethods.forEach(method => {
+                method.addEventListener("change", toggleCardDetails);
+            });
+    
+            toggleCardDetails(); // Call initially to set the correct state
         });
     </script>
+    
     <footer class="bg-dark text-white text-center py-3">
         <p class="mb-0">&copy; 2025 Express Zone. All rights reserved.</p>
     </footer>
