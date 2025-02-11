@@ -1,0 +1,201 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #1f66ea, #1f6cf0);
+    padding: 15px 0;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-bottom: 3px solid #17a2b8;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, hsl(195, 38%, 52%), #243dcd);
+    padding: 10px 0;
+    border-bottom: 3px solid #17a2b8;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 3rem;
+    color: #ffffff !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.2rem;
+    padding: 10px 18px;
+    color: #f5eded;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #030217;
+    transform: scale(1.05);
+    text-decoration: underline;
+}
+
+/* Search Bar */
+.position-relative {
+    width: 280px;
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #17a2b8;
+    border-radius: 20px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+#search-bar:focus {
+    border-color: #138496;
+    box-shadow: 0 0 5px rgba(23, 162, 184, 0.5);
+}
+
+#search-results {
+    display: none;
+    position: absolute;
+    top: 42px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    max-width: 280px;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.search-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s ease-in-out;
+}
+
+.search-item:hover {
+    background: #f1f3f5;
+}
+
+/* Shop Section */
+#shop {
+    padding: 50px 0;
+    background: #ffffff;
+}
+
+#shop h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #545c64;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(5, 2, 2, 0.2);
+}
+
+.card img {
+    height: 170px;
+    object-fit: contain;
+    background-color: #f1f3f5;
+    padding: 10px;
+}
+
+.card-body {
+    text-align: center;
+    background: white;
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #134e8a;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    color: #02070a;
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #17a2b8;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #138496;
+}
+/* Apply background color or image */
+#contact {
+    background: linear-gradient(rgba(2, 11, 50, 0.6), rgba(0, 0, 0, 0.6)), url('banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 50px 0;
+}
+
+/* Style form fields */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: none;
+}
+
+/* Style button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+h2, h4, {
+    color: white;
+}
+.star-rating {
+    cursor: pointer;
+}
+.star {
+    font-size: 1.2rem;
+    color: #c0c7ce;
+}
+.star.selected {
+    color: gold;
+}
+.specs {
+    font-size: 0.9rem;
+    color: #24252e;
+}

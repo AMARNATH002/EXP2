@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Zone - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">EXPRESS ZONE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cart.html">🛒MyCart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                
+                <div class="position-relative ms-3">
+                    <input class="form-control" type="search" id="search-bar" placeholder="Search products..." aria-label="Search">
+                    <div id="search-results" class="position-absolute w-100"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section id="home" class="text-center d-flex align-items-center justify-content-center" 
+    style="height: 95vh; background: url('banner.jpg') no-repeat center center/cover;">
+        <div class="container">
+            <h1 class="text-white">Welcome to Express Zone</h1>
+            <p class="text-white">Your one-stop shop for quality products</p>
+            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <script>
+       
+        const products = [
+            { name: "Wireless Headphones", link: "shop.html" },
+            {name:"Microphone",link:"shop.html"},
+            {name:"Hair Dryer",link:"shop.html"},
+            {name:"keyBoard",link:"shop.html"},
+            {name:"Tablet",link:"shop.html"},
+            {name:"Wireless Earbuds",link:"shop.html"},
+            {name:"HD Monitor",link:"shop.html"},
+            {name:"Gaming Chair",link:"shop.html"},
+            
+            
+            { name: "Smartwatch", link: "shop.html" },
+            { name: "Mechanical Keyboard", link: "shop.html" },
+            { name: "Gaming Laptop", link: "shop.html" },
+            { name: "Bluetooth Speaker", link: "shop.html" },
+            { name: "Gaming Mouse", link: "shop.html" }
+        ];
+
+        const searchBar = document.getElementById("search-bar");
+        const searchResults = document.getElementById("search-results");
+
+        
+        searchBar.addEventListener("input", function () {
+            const query = searchBar.value.toLowerCase();
+            searchResults.innerHTML = "";
+
+            if (query === "") {
+                searchResults.style.display = "none";
+                return;
+            }
+
+            const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+
+            if (filteredProducts.length === 0) {
+                searchResults.innerHTML = "<div class='search-item'>No results found</div>";
+            } else {
+                filteredProducts.forEach(product => {
+                    const item = document.createElement("div");
+                    item.classList.add("search-item");
+                    item.textContent = product.name;
+                    item.onclick = () => window.location.href = product.link;
+                    searchResults.appendChild(item);
+                });
+            }
+
+            searchResults.style.display = "block";
+        });
+
+        
+        document.addEventListener("click", function (e) {
+            if (!searchBar.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.style.display = "none";
+            }
+        });
+    </script>
+    <footer class="bg-dark text-white text-center py-3">
+        <p class="mb-0">&copy; 2025 Express Zone. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
