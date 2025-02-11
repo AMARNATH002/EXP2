@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- Header -->
+  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="home.html">Express Zone</a>
@@ -27,7 +27,7 @@
         </div>
     </nav>
     
-    <!-- Checkout Section -->
+    
     <section id="checkout" class="py-5">
         <div class="container">
             <h2 class="text-center mb-4">Checkout</h2>
@@ -139,7 +139,7 @@
                 checkoutItems.innerHTML += row;
             });
     
-            // Hide or show card details based on the selected payment method
+            
             const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
             const cardDetails = document.getElementById("card-details");
     
@@ -152,7 +152,7 @@
                 method.addEventListener("change", toggleCardDetails);
             });
     
-            toggleCardDetails(); // Call initially to set the correct state
+            toggleCardDetails(); 
         });
     </script>
     
